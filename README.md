@@ -1,3 +1,3 @@
 # Banda La Caña
 
-Landing page da Banda La Caña (HTML/CSS estático).
+Landing page de La Caña (HTML/CSS estático).
