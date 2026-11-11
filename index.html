@@ -3,88 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Caña — Música en directo</title>
-<meta La Caña: nos tomamos la música en serio, pero no a nosotros mismos. Directos, fechas y contratación.">
-<meta property="La Caña">
-<meta property="Nos tomamos la música en serio, pero no a nosotros mismos.">
-<meta property="og:type" content="website">
+<title>La Caña — Música en serio. Nosotros no.</title>
+<meta name="description" content="La Caña: nos tomamos la música en serio, pero no a nosotros mismos. Directos, fechas y contratación.">
+<meta property="og:title" content="La Caña">
+<meta property="og:description" content="Música en serio. Nosotros no.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/avatar.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Permanent+Marker&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#14100c; --bg2:#1d1712; --ink:#f6efe4; --mute:#b9ab97;
-  --cane:#e9b230; --fire:#e2552b; --line:rgba(246,239,228,.12);
-  --r:14px;
+  --cream:#fbf3e1; --ink:#1b130e; --amber:#f0a50e; --red:#c8381f;
+  --mute:#6b5d50; --line:rgba(27,19,14,.14);
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.05;letter-spacing:-.02em}
+body{background:var(--cream);color:var(--ink);font:18px/1.6 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;line-height:1;text-transform:uppercase}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 section{padding:88px 0}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cane);margin-bottom:14px}
-h2{font-size:clamp(32px,5vw,52px);font-weight:800;margin-bottom:18px}
-.lead{color:var(--mute);max-width:56ch}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+h2{font-size:clamp(34px,6vw,60px);margin-bottom:20px}
+.hand{font-family:'Permanent Marker',cursive;text-transform:none}
+.lead{max-width:54ch}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(20,16,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--cream)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;text-decoration:none}
-.logo span{color:var(--cane)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 22px 'Archivo Black';text-transform:uppercase}
+.brand img{width:38px;height:38px;border-radius:50%}
+.brand .hand{color:var(--amber);font-size:18px;margin-right:-4px}
 nav ul{display:flex;gap:26px;list-style:none;padding:0}
-nav ul a{text-decoration:none;font-size:15px;color:var(--mute)}
-nav ul a:hover{color:var(--ink)}
-.btn{display:inline-block;background:var(--cane);color:#1a1208;font-weight:600;padding:14px 26px;border-radius:999px;text-decoration:none;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-2px);background:#f3c14d}
-.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
-.btn.ghost:hover{background:var(--bg2)}
+nav ul a{text-decoration:none;font-size:15px;font-weight:500;opacity:.8}
+nav ul a:hover{opacity:1;color:var(--amber)}
+.btn{display:inline-block;background:var(--amber);color:var(--ink);font:700 16px Karla;letter-spacing:.04em;text-transform:uppercase;padding:14px 26px;border:3px solid var(--ink);border-radius:8px;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--cream)}
+nav .btn{padding:8px 16px;font-size:14px;border-color:var(--amber);box-shadow:none}
 @media(max-width:720px){nav ul{display:none}}
 
-/* hero */
-.hero{padding:110px 0 96px;background:
-  radial-gradient(900px 500px at 80% -10%,rgba(226,85,43,.35),transparent 60%),
-  radial-gradient(700px 400px at 0% 100%,rgba(233,178,48,.18),transparent 60%)}
-.hero h1{font-size:clamp(54px,11vw,128px);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--cane)}
-.hero p{font-size:clamp(18px,2.4vw,22px);color:var(--mute);max-width:46ch;margin:26px 0 36px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding:40px 0 70px;text-align:center}
+.hero img{width:min(920px,100%);height:auto;display:block;margin:0 auto 10px}
+.cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-/* about */
+.dark{background:var(--ink);color:var(--cream)}
+.dark .eyebrow{color:var(--amber)}
 .about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
-.stats{display:grid;gap:14px}
-.stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
-.stat b{display:block;font:800 40px 'Bricolage Grotesque';color:var(--cane)}
-.stat span{color:var(--mute);font-size:15px}
+.about .lead+.lead{margin-top:14px}
+.pairs{display:grid;gap:16px}
+.pair{border:3px solid var(--amber);border-radius:12px;padding:24px}
+.pair b{display:block;font:400 26px 'Archivo Black';text-transform:uppercase;color:var(--amber);line-height:1.05;margin-bottom:6px}
+.pair span{opacity:.8}
 @media(max-width:800px){.about{grid-template-columns:1fr}}
 
-/* shows */
-.alt{background:var(--bg2)}
-.shows{list-style:none;padding:0;margin-top:30px;border-top:1px solid var(--line)}
-.shows li{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
-.date{font:800 28px 'Bricolage Grotesque';color:var(--cane)}
-.date small{display:block;font:600 12px Inter;letter-spacing:.12em;color:var(--mute)}
-.shows h3{font-size:22px}
-.shows p{color:var(--mute);font-size:15px}
-.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--mute);text-decoration:none}
-a.tag:hover{color:var(--ink);border-color:var(--cane)}
-@media(max-width:600px){.shows li{grid-template-columns:70px 1fr}.shows .tag{grid-column:2}}
+.gigs{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:center}
+.gigs img{width:100%;height:auto;border-radius:10px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--amber)}
+.date-row{display:flex;gap:20px;align-items:center;margin-top:26px;padding:20px 0;border-top:3px solid var(--ink)}
+.date-row .tag{font:700 13px Karla;letter-spacing:.12em;text-transform:uppercase;background:var(--red);color:var(--cream);padding:6px 12px;border-radius:4px;white-space:nowrap}
+.date-row h3{font-size:22px;margin-bottom:4px}
+.date-row p{color:var(--mute);font-size:16px}
+@media(max-width:800px){.gigs{grid-template-columns:1fr;gap:40px}.gigs img{max-width:340px}}
 
-/* members */
+.amber{background:var(--amber)}
+.amber .eyebrow{color:var(--ink)}
 .members{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:34px}
-.member{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--cane),var(--fire));display:grid;place-items:center;font:800 24px 'Bricolage Grotesque';color:#1a1208;margin-bottom:16px}
-.member h3{font-size:20px}
-.member p{color:var(--mute);font-size:15px}
+.member{background:var(--cream);border:3px solid var(--ink);border-radius:12px;padding:26px;box-shadow:5px 5px 0 var(--ink)}
+.member .ph{width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--amber);display:grid;place-items:center;font:400 26px 'Archivo Black';margin-bottom:16px}
+.member h3{font-size:20px;margin-bottom:4px}
+.member p{color:var(--mute);font-size:16px}
 
-/* contact */
-.contact{text-align:center;background:
-  radial-gradient(700px 360px at 50% 0%,rgba(226,85,43,.28),transparent 70%)}
+.contact{background:var(--red);color:var(--cream);text-align:center}
+.contact .eyebrow{color:var(--cream);opacity:.8}
 .contact .lead{margin:0 auto 32px}
-.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-footer{padding:30px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.contact .btn{border-color:var(--ink)}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+footer{background:var(--ink);color:var(--cream);padding:30px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+footer .hand{color:var(--amber);font-size:18px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -92,10 +88,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="#top">La <span>Caña</span></a>
+    <a class="brand" href="#top"><img src="assets/avatar.png" alt=""><span><span class="hand">La</span> Caña</span></a>
     <ul>
       <li><a href="#nombre">El nombre</a></li>
-      <li><a href="#shows">Directos</a></li>
+      <li><a href="#directos">Directos</a></li>
       <li><a href="#banda">La banda</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -105,69 +101,66 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">Música en directo</p>
-    <h1>La <em>Caña</em></h1>
-    <p>Nos tomamos la música en serio, pero no a nosotros mismos.</p>
+    <img src="assets/logo.png" alt="La Caña — Música en serio. Nosotros no." width="1400" height="642">
     <div class="cta">
       <a class="btn" href="#contacto">Contratar a la banda</a>
-      <a class="btn ghost" href="#nombre">Por qué “La Caña”</a>
+      <a class="btn alt" href="#nombre">Por qué “La Caña”</a>
     </div>
   </div>
 </header>
 
-<section id="nombre">
+<section class="dark" id="nombre">
   <div class="wrap about">
     <div>
       <p class="eyebrow">El nombre</p>
       <h2>La música como excusa para juntarnos.</h2>
       <p class="lead">“La Caña” nace de una idea simple: reunirse, tocar y disfrutar. Como esa caña que nos pedimos en el bar antes, durante o después de los ensayos, sin ceremonias y sin pretensiones.</p>
-      <p class="lead" style="margin-top:14px">Y como “es la caña” significa que es lo mejor, que mola, que te vuela la cabeza, eso es justo lo que buscamos cada vez que nos juntamos a tocar o subimos al escenario.</p>
+      <p class="lead">Y como “es la caña” significa que es lo mejor, que mola, que te vuela la cabeza, eso es justo lo que buscamos cada vez que nos juntamos a tocar o subimos al escenario.</p>
     </div>
-    <div class="stats">
-      <div class="stat"><b>Disfrute y excelencia</b><span>Dos significados en una sola palabra.</span></div>
-      <div class="stat"><b>Bar y escenario</b><span>Lo cotidiano y lo especial, a la vez.</span></div>
+    <div class="pairs">
+      <div class="pair"><b>Disfrute y excelencia</b><span>Dos significados en una sola palabra.</span></div>
+      <div class="pair"><b>Bar y escenario</b><span>Lo cotidiano y lo especial, a la vez.</span></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="shows">
+<section id="directos">
   <div class="wrap">
-    <p class="eyebrow">Agenda</p>
-    <h2>Próximos directos</h2>
-    <p class="lead">Ven a vernos de cerca. Fechas y lugares, muy pronto.</p>
-    <ul class="shows">
-      <li>
-        <div class="date"><small>PRÓX.</small>--</div>
-        <div><h3>Fecha por anunciar</h3><p>Lugar por confirmar</p></div>
+    <div>
+      <p class="eyebrow">Agenda</p>
+      <h2>Próximos directos</h2>
+      <p class="lead">Ven a vernos de cerca. Con una caña en la mano, mejor.</p>
+      <div class="date-row">
         <span class="tag">Muy pronto</span>
-      </li>
-    </ul>
+        <div><h3>Fecha por anunciar</h3><p>Sala o bar por confirmar</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="banda">
+<section class="amber" id="banda">
   <div class="wrap">
     <p class="eyebrow">La banda</p>
     <h2>Quién hace el ruido.</h2>
     <div class="members">
-      <div class="member"><div class="avatar">?</div><h3>Nombre</h3><p>Voz</p></div>
-      <div class="member"><div class="avatar">?</div><h3>Nombre</h3><p>Guitarra</p></div>
-      <div class="member"><div class="avatar">?</div><h3>Nombre</h3><p>Bajo</p></div>
-      <div class="member"><div class="avatar">?</div><h3>Nombre</h3><p>Batería</p></div>
+      <div class="member"><div class="ph">?</div><h3>Nombre</h3><p>Voz</p></div>
+      <div class="member"><div class="ph">?</div><h3>Nombre</h3><p>Guitarra</p></div>
+      <div class="member"><div class="ph">?</div><h3>Nombre</h3><p>Bajo</p></div>
+      <div class="member"><div class="ph">?</div><h3>Nombre</h3><p>Batería</p></div>
     </div>
   </div>
 </section>
 
-<section class="contact alt" id="contacto">
+<section class="contact" id="contacto">
   <div class="wrap">
     <p class="eyebrow">Contacto</p>
     <h2>¿Nos tomamos una caña?</h2>
     <p class="lead">Cuéntanos la fecha, el sitio y el tipo de evento, y hablamos.</p>
-    <a class="btn" href="mailto:contacto@lacana.example?subject=Contratación%20-%20La%20Caña">Escríbenos</a>
+    <a class="btn" href="mailto:contacto@lacana.example?subject=Contrataci%C3%B3n%20-%20La%20Ca%C3%B1a">Escríbenos</a>
     <div class="links">
-      <a class="btn ghost" href="https://instagram.com/" rel="noopener">Instagram</a>
-      <a class="btn ghost" href="https://wa.me/" rel="noopener">WhatsApp</a>
-      <a class="btn ghost" href="https://youtube.com/" rel="noopener">YouTube</a>
+      <a class="btn alt" href="https://instagram.com/" rel="noopener">Instagram</a>
+      <a class="btn alt" href="https://wa.me/" rel="noopener">WhatsApp</a>
+      <a class="btn alt" href="https://youtube.com/" rel="noopener">YouTube</a>
     </div>
   </div>
 </section>
@@ -175,7 +168,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© 2026 La Caña</span>
-    <span>En serio con la música, no con nosotros</span>
+    <span class="hand">Música en serio. Nosotros no.</span>
   </div>
 </footer>
 
