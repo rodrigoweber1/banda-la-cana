@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banda La Caña — Música ao vivo</title>
+<meta name="description" content="Banda La Caña: música ao vivo com energia, ritmo e muita festa. Veja os próximos shows e contrate a banda para o seu evento.">
+<meta property="og:title" content="Banda La Caña">
+<meta property="og:description" content="Música ao vivo com energia, ritmo e muita festa.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14100c; --bg2:#1d1712; --ink:#f6efe4; --mute:#b9ab97;
+  --cane:#e9b230; --fire:#e2552b; --line:rgba(246,239,228,.12);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cane);margin-bottom:14px}
+h2{font-size:clamp(32px,5vw,52px);font-weight:800;margin-bottom:18px}
+.lead{color:var(--mute);max-width:56ch}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(20,16,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;text-decoration:none}
+.logo span{color:var(--cane)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav ul a{text-decoration:none;font-size:15px;color:var(--mute)}
+nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--cane);color:#1a1208;font-weight:600;padding:14px 26px;border-radius:999px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:#f3c14d}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--bg2)}
+@media(max-width:720px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:110px 0 96px;background:
+  radial-gradient(900px 500px at 80% -10%,rgba(226,85,43,.35),transparent 60%),
+  radial-gradient(700px 400px at 0% 100%,rgba(233,178,48,.18),transparent 60%)}
+.hero h1{font-size:clamp(54px,11vw,128px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--cane)}
+.hero p{font-size:clamp(18px,2.4vw,22px);color:var(--mute);max-width:46ch;margin:26px 0 36px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.stats{display:grid;gap:14px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.stat b{display:block;font:800 40px 'Bricolage Grotesque';color:var(--cane)}
+.stat span{color:var(--mute);font-size:15px}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+
+/* shows */
+.alt{background:var(--bg2)}
+.shows{list-style:none;padding:0;margin-top:30px;border-top:1px solid var(--line)}
+.shows li{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.date{font:800 28px 'Bricolage Grotesque';color:var(--cane)}
+.date small{display:block;font:600 12px Inter;letter-spacing:.12em;color:var(--mute)}
+.shows h3{font-size:22px}
+.shows p{color:var(--mute);font-size:15px}
+.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--mute);text-decoration:none}
+a.tag:hover{color:var(--ink);border-color:var(--cane)}
+@media(max-width:600px){.shows li{grid-template-columns:70px 1fr}.shows .tag{grid-column:2}}
+
+/* members */
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:34px}
+.member{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--cane),var(--fire));display:grid;place-items:center;font:800 24px 'Bricolage Grotesque';color:#1a1208;margin-bottom:16px}
+.member h3{font-size:20px}
+.member p{color:var(--mute);font-size:15px}
+
+/* contact */
+.contact{text-align:center;background:
+  radial-gradient(700px 360px at 50% 0%,rgba(226,85,43,.28),transparent 70%)}
+.contact .lead{margin:0 auto 32px}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">La <span>Caña</span></a>
+    <ul>
+      <li><a href="#banda">A banda</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#integrantes">Integrantes</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn" href="#contato">Contratar</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Música ao vivo</p>
+    <h1>Banda<br>La <em>Caña</em></h1>
+    <p>Ritmo, suor e festa. Um show que faz o salão inteiro dançar do primeiro ao último acorde.</p>
+    <div class="cta">
+      <a class="btn" href="#contato">Contratar a banda</a>
+      <a class="btn ghost" href="#shows">Próximos shows</a>
+    </div>
+  </div>
+</header>
+
+<section id="banda">
+  <div class="wrap about">
+    <div>
+      <p class="eyebrow">A banda</p>
+      <h2>Energia que sai do palco e toma a pista.</h2>
+      <p class="lead">A La Caña sobe ao palco para transformar qualquer evento em festa. Repertório para dançar, cantar junto e não querer voltar para casa — de bares e casamentos a festivais e eventos corporativos.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>100%</b><span>ao vivo, sem playback</span></div>
+      <div class="stat"><b>+3h</b><span>de show, com repertório sob medida</span></div>
+      <div class="stat"><b>Sua</b><span>festa, nosso som completo</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="shows">
+  <div class="wrap">
+    <p class="eyebrow">Agenda</p>
+    <h2>Próximos shows</h2>
+    <p class="lead">Venha ver a La Caña de perto. Datas e locais em breve.</p>
+    <ul class="shows">
+      <li>
+        <div class="date"><small>DEZ</small>12</div>
+        <div><h3>Show de fim de ano</h3><p>Local a confirmar · 21h</p></div>
+        <a class="tag" href="#contato">Saiba mais</a>
+      </li>
+      <li>
+        <div class="date"><small>DEZ</small>31</div>
+        <div><h3>Réveillon com a La Caña</h3><p>Local a confirmar · 23h</p></div>
+        <a class="tag" href="#contato">Saiba mais</a>
+      </li>
+      <li>
+        <div class="date"><small>JAN</small>--</div>
+        <div><h3>Nova data a anunciar</h3><p>Acompanhe nossas redes</p></div>
+        <span class="tag">Em breve</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="integrantes">
+  <div class="wrap">
+    <p class="eyebrow">Integrantes</p>
+    <h2>Quem faz o som.</h2>
+    <div class="members">
+      <div class="member"><div class="avatar">V</div><h3>Vocal</h3><p>A voz e a presença que conduzem o show.</p></div>
+      <div class="member"><div class="avatar">G</div><h3>Guitarra</h3><p>Riffs, solos e muito groove.</p></div>
+      <div class="member"><div class="avatar">B</div><h3>Baixo</h3><p>A base que faz o corpo mexer.</p></div>
+      <div class="member"><div class="avatar">P</div><h3>Percussão &amp; Bateria</h3><p>O coração pulsando do início ao fim.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact alt" id="contato">
+  <div class="wrap">
+    <p class="eyebrow">Contato</p>
+    <h2>Vamos fazer a sua festa?</h2>
+    <p class="lead">Conte a data, o local e o tipo de evento. Respondemos com proposta e disponibilidade.</p>
+    <a class="btn" href="mailto:contato@bandalacana.com.br?subject=Orçamento%20-%20Banda%20La%20Caña">Pedir orçamento</a>
+    <div class="links">
+      <a class="btn ghost" href="https://instagram.com/" rel="noopener">Instagram</a>
+      <a class="btn ghost" href="https://wa.me/" rel="noopener">WhatsApp</a>
+      <a class="btn ghost" href="https://youtube.com/" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Banda La Caña</span>
+    <span>Música ao vivo</span>
+  </div>
+</footer>
+
+</body>
+</html>
