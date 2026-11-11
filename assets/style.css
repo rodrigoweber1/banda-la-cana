@@ -32,7 +32,7 @@ main>section{min-height:calc(100svh - var(--nav-h));display:flex;align-items:cen
 /* nav */
 nav{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--cream);height:var(--nav-h)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
-.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font:400 20px/28px 'Archivo Black';text-transform:uppercase}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:8px;text-decoration:none;font:400 20px/28px 'Archivo Black';text-transform:uppercase}
 .brand img{width:40px;height:40px;border-radius:50%}
 .brand .hand{color:var(--amber);font-size:18px;margin-right:-4px}
 nav ul{display:flex;gap:32px;list-style:none;padding:0}
@@ -40,7 +40,7 @@ nav ul a{position:relative;text-decoration:none;font:500 14px/20px Karla;padding
 nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 nav ul a:hover::after,nav ul a:focus-visible::after,nav ul a[aria-current]::after{transform:scaleX(1)}
 .nav-cta{display:flex;align-items:center;gap:12px}
-.menu-btn{display:none;background:none;border:2px solid var(--cream);color:var(--cream);font:600 14px/20px Karla;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:8px;cursor:pointer}
+.menu-btn{min-height:44px;display:none;background:none;border:2px solid var(--cream);color:var(--cream);font:600 14px/20px Karla;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:8px;cursor:pointer}
 
 /* buttons: one pair; only transform animates */
 .btn{display:inline-block;background:var(--amber);color:var(--ink);font:600 16px/24px Karla;letter-spacing:.04em;text-transform:uppercase;padding:12px 24px;border:3px solid var(--ink);border-radius:8px;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .3s var(--ease);cursor:pointer}
@@ -53,7 +53,8 @@ nav .btn:active{transform:translateY(2px)}
 
 @media(max-width:720px){
   .menu-btn{display:block}
-  nav .btn{display:none}
+  nav .btn{padding:8px 12px}
+  main>section:not(.hero){min-height:0;padding:48px 0}
   nav ul{position:fixed;inset:var(--nav-h) 0 0 0;background:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:32px;display:none}
   nav ul.open{display:flex}
   nav ul a{font:400 30px/36px 'Archivo Black';text-transform:uppercase}
@@ -63,10 +64,16 @@ nav .btn:active{transform:translateY(2px)}
 /* hero */
 .hero{text-align:center}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
-.hero img{width:min(900px,100%);max-height:52svh;object-fit:contain;height:auto;display:block}
-.hero h1{font:600 18px/28px Karla;text-transform:none;max-width:34ch}
-@media(min-width:900px){.hero h1{font-size:24px;line-height:32px}}
-.cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%}
+.hero img{width:min(900px,100%);object-fit:contain;height:auto;display:block}
+.hero h1{font-size:24px;line-height:32px;max-width:24ch}
+@media(min-width:900px){.hero h1{font-size:36px;line-height:40px}}
+.hero img{max-height:42svh}
+.tagline{display:flex;align-items:center;gap:16px;font-size:24px;line-height:32px;transform:rotate(-1.5deg);margin-top:-8px}
+.tagline::before,.tagline::after{content:"";width:48px;height:3px;background:var(--amber)}
+@media(max-width:480px){.tagline{font-size:18px;line-height:28px;white-space:nowrap;gap:8px}.tagline::before,.tagline::after{width:16px}.brand img{display:none}}
+.textlink{font:600 16px/24px Karla;letter-spacing:.04em;text-transform:uppercase;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px;text-decoration-color:var(--amber);padding:12px 8px}
+.textlink:hover{text-decoration-color:var(--red)}
+.cta{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;width:100%}
 
 /* name */
 .dark{background:var(--ink);color:var(--cream)}
@@ -107,7 +114,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 footer .hand{color:var(--amber);font-size:18px;line-height:28px}
 footer nav{position:static;height:auto;background:none;display:block}
 footer ul{display:flex;gap:24px;list-style:none;padding:0}
-footer a{position:relative;text-decoration:none}
+footer a{position:relative;text-decoration:none;display:inline-block;padding:12px 0}
 footer a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 footer a:hover::after,footer a:focus-visible::after{transform:scaleX(1)}
 
@@ -129,3 +136,18 @@ footer a:hover::after,footer a:focus-visible::after{transform:scaleX(1)}
   *{transition:none!important;scroll-behavior:auto!important}
   .frame:hover video{transform:none}
 }
+
+/* tono: menos formal */
+.note{font-size:18px;line-height:24px;letter-spacing:0;color:var(--amber);display:inline-block;margin-left:8px;transform:rotate(-3deg);text-transform:none}
+.frame{position:relative}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(27,19,14,.25);border:0;cursor:pointer}
+.play[hidden]{display:none}
+.play span{width:72px;height:72px;border-radius:50%;background:var(--amber);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);position:relative;transition:transform .3s var(--ease)}
+.play span::after{content:"";position:absolute;left:28px;top:20px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent var(--ink)}
+.play:hover span{transform:scale(1.06)}
+.play:active span{transform:scale(.98)}
+.sticker{position:absolute;right:12px;top:12px;background:var(--red);color:var(--cream);font-size:20px;line-height:24px;padding:4px 12px;border:3px solid var(--ink);border-radius:8px;transform:rotate(5deg);pointer-events:none}
+.cards .card:nth-child(1){transform:rotate(-1deg)}
+.cards .card:nth-child(2){transform:rotate(.75deg)}
+.cards .card:nth-child(3){transform:rotate(-.5deg)}
+@media(max-width:720px){.cards .card{transform:none!important}}

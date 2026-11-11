@@ -9,7 +9,7 @@
 <meta name="site-kind" content="other">
 <meta property="og:title" content="La Caña">
 <meta property="og:description" content="Música en serio. Nosotros no.">
-<meta property="og:image" content="assets/logo.png">
+<meta property="og:image" content="https://rodrigoweber1.github.io/banda-la-cana/assets/og.png">
 <link rel="icon" href="assets/avatar.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,11 +39,12 @@
 
 <section class="hero" id="top">
   <div class="wrap">
-    <img src="assets/logo.png" alt="La Caña — Música en serio. Nosotros no." width="1400" height="642">
+    <img src="assets/logo-sin-lema.png" alt="La Caña" width="1400" height="499">
+    <p class="tagline hand">Música en serio. Nosotros no.</p>
     <h1>Banda de música en directo para tu bar, tu fiesta o tu evento.</h1>
     <div class="cta">
       <a class="btn" href="#contacto">Contratar a la banda</a>
-      <a class="btn alt" href="#banda">Conocer a la banda</a>
+      <a class="textlink" href="#banda">Conocer a la banda</a>
     </div>
   </div>
 </section>
@@ -51,7 +52,7 @@
 <section class="dark" id="banda">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">La banda</p>
+      <p class="eyebrow">La banda <span class="note hand">(sí, la de cerveza)</span></p>
       <h2>La música como excusa para juntarnos.</h2>
       <p class="lead">“La Caña” nace de una idea simple: reunirse, tocar y disfrutar. Como esa caña que nos pedimos en el bar antes, durante o después de los ensayos, sin ceremonias y sin pretensiones.</p>
       <p class="lead">Y como “es la caña” significa que es lo mejor, que mola, que te vuela la cabeza, eso es justo lo que buscamos cada vez que nos juntamos a tocar o subimos al escenario.</p>
@@ -67,6 +68,8 @@
   <div class="wrap ensayo">
     <div class="frame">
       <video controls playsinline preload="metadata" poster="assets/ensayo-1.jpg" src="assets/ensayo-1.mp4" aria-label="Vídeo de un ensayo de La Caña"></video>
+      <button class="play" type="button" aria-label="Reproducir el ensayo" hidden><span aria-hidden="true"></span></button>
+      <span class="sticker hand" aria-hidden="true">Sin ceremonias</span>
     </div>
     <div>
       <p class="eyebrow">Ensayos</p>
@@ -115,9 +118,15 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'),m=document.getElementById('menu');
-  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.textContent=o?'Cerrar':'Menú'}
+  var main=document.getElementById('contenido');
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.textContent=o?'Cerrar':'Menú';main.inert=o&&matchMedia('(max-width:720px)').matches;if(!o)b.focus({preventScroll:true})}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))set(false)});
   b.addEventListener('click',function(){set(!m.classList.contains('open'))});
   m.addEventListener('click',function(e){if(e.target.tagName==='A')set(false)});
+  var v=document.querySelector('.frame video'),p=document.querySelector('.frame .play');
+  if(v&&p){v.removeAttribute('controls');p.hidden=false;
+    p.addEventListener('click',function(){v.setAttribute('controls','');p.hidden=true;v.play()});
+    v.addEventListener('ended',function(){v.removeAttribute('controls');p.hidden=false});}
   var links=[].slice.call(m.querySelectorAll('a'));
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){
